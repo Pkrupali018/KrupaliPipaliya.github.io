@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Drag & Drop</title>
+<style>
+#div1, #div2, #div3, #div4, #div5{
+  float: left;
+  width: 1200px;
+  height: 100px;
+  margin: 5px;
+  padding: 1px;
+  border: 1px solid black;
+}
+
+button{
+  padding: 5px 10px;
+  background-color: rgb(0, 128, 49);
+}
+button:hover{
+  background-color: rgb(236, 233, 233);
+  padding: 7px 15px;
+}
+a{
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+a:hover{
+  color: black;
+}
+</style>
+
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+
+<body>
+
+<button style="float: left;"><a href="Gological%20API.html">Back</a></button> 
+<center><button><a href="index.html#project">Leave</a></button></center> 
+<button style="float: right;"><a href="index.html#project">Next</a></button>
+<center><h1>Drag and Drop Puzzle</h1></center>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<title>
+Make an Element Draggable :
+First of all: To make an element draggable, set the draggable attribute to true:
+</title>
+<img src="img/d4.jpeg" draggable="true" ondragstart="drag(event)" id="drag1" width="1200" height="100">
+<img src="img/d3.jpeg" draggable="true" ondragstart="drag(event)" id="drag2" width="1200" height="100">
+<img src="img/d1.jpeg" draggable="true" ondragstart="drag(event)" id="drag3" width="1200" height="100">
+<img src="img/d2.jpeg" draggable="true" ondragstart="drag(event)" id="drag4" width="1200" height="100">
+
+</body>
+</html>

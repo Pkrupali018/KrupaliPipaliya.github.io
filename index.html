@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inrtoduction</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+
+    <!-- Navbar Start -->
+    <section id="header">
+      <div class="header container">
+        <div class="nav-bar">
+          <div class="brand">
+            <a href="#hero">
+              <h1>Intro<span>duction</span></h1>
+            </a>
+          </div>
+          <div class="nav-list">
+            <div class="hamburger">
+              <div class="bar"></div>
+            </div>
+            <ul>
+              <li><a href="#home" data-after="Home">Home</a></li>
+              <li><a href="#about" data-after="About">About</a></li>
+              <li><a href="#certification" data-after="certification">Certification</a></li>
+              <li><a href="#service" data-after="Service">Services</a></li>
+              <li><div class="dropdown">
+                <button class="dp">dropdown</button>
+                <div class="dropdown-content">
+                  <a href="#project" data-after="Projects">Projects</a>
+                  <a href="#newidea">Start Up</a>
+                </div>
+              </div></li>
+              <li><a href="#contact" data-after="Contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="app.js"></script>
+    <!-- Navbar End -->
+  
+    <!-- Home Section Start -->
+    <section class="home" id="home">
+        <div class="home-con">
+            <div class="max-width">
+                <div class="text1">Hello, My name is</div>
+                <div class="text2">Krupali Pipaliya</div>
+                <div class="text3">I'm a <span> student</span></div>
+                <button><a href="#" class="btn">Portfolio</a></button>
+            </div>
+        </div>
+    </section>
+    <!-- Home Section End -->
+
+    <!-- About_me Section Start -->
+    <section id="about">
+      <div class="about">
+          <h1 class="section-title">About <span>me</span></h1>
+          <div class="col-right">
+          <h2>Front End Developer</h2>
+          <p>I am a Krupali Pipaliya and from rajkot. I am a first-year student of B.Tech at the moment. I got enrolled in Dharmsinh Desai University due to my immense intrest in computer science. In the first semester of the collage I learned C language, Linux OS and the present semester I learn C++, HTML, CSS, PHP and MYSQL. In computer science field, I intrested in web development and app development. In my free time, I also like to solve puzzles, play chess and draw paintings. My short term goal is to get a job in well-known companies and develope my siklls and long term goal is to start up my own business.</p>
+          <!-- <button><a href="#" class="btn">Download Resume</a></button> -->
+        </div>
+        <div class="col-left">
+          <div class="about-img">
+            <img src="img/a1.jpg" alt="img" >
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- About_me Section End -->
+
+  <!-- Certification Section Start -->
+  <section id="certification">
+    <h1 class="section-title">Certif<span>i</span>cation</h1>
+    <p>I passed my SSC and HSC from Tapovan Science School,Rajkot. Currently I am studying in Dharmsinh Desai University, Nadiad</p>
+    <div class="row">
+      <div class="column">
+        <img src="img/c1.jpeg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+      </div>
+      <div class="column">
+        <img src="img/c2.jpeg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+      </div>
+      <div class="column">
+        <img src="img/c3.jpeg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+      </div>
+      <div class="column">
+        <img src="img/c4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+      </div>
+    </div>
+    
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+    
+        <div class="mySlides">
+          <div class="numbertext">1 / 4</div>
+          <img src="img/c1.jpeg" style="width:100%">
+        </div>
+    
+        <div class="mySlides">
+          <div class="numbertext">2 / 4</div>
+          <img src="img/c2.jpeg" style="width:100%">
+        </div>
+    
+        <div class="mySlides">
+          <div class="numbertext">3 / 4</div>
+          <img src="img/c3.jpeg" style="width:100%">
+        </div>
+        
+        <div class="mySlides">
+          <div class="numbertext">4 / 4</div>
+          <img src="img/c4.jpg" style="width:100%">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+    
+    
+        <div class="column">
+          <img class="demo cursor" src="img/c1.jpeg" style="width:100%" onclick="currentSlide(1)" alt="SSC Result">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="img/c2.jpeg" style="width:100%" onclick="currentSlide(2)" alt="HSC Result">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="img/c3.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Gujcet Result">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="img/c4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Sololearn Certificate">
+        </div>
+      </div>
+    </div>
+  </section>
+    
+    <script>
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+    
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+    
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+    <!-- Certification Section End -->
+
+    <!-- Services Section Start -->
+    <section id="service">
+      <div class="service container">
+              <h1 class="section-title"><span>My</span> services</h1>
+          <div class="service-top">
+              <p>I provide(in future) many services like web desinging, advertising, app desinging and many more.</p>
+          </div>
+          <div class="service-bottom">
+              <div class="service-item">
+                  <div class="icon"><img src="https://img.icons8.com/fluent/48/000000/laptop-settings.png"/></div> 
+                  <h2>Web Design</h2>
+                  <p>Web design encompasses many different skills and disciplines in the production and maintenance of websites. Web design partially overlaps web engineering in the broader scope of web development.</p>
+              </div>
+              <div class="service-item">
+                  <div class="icon"><img src="https://img.icons8.com/fluent/48/000000/laptop-settings.png"/></div> 
+                  <h2>Web Design</h2>
+                  <p>Web design encompasses many different skills and disciplines in the production and maintenance of websites. Web design partially overlaps web engineering in the broader scope of web development.</p>
+              </div>
+              <div class="service-item">
+                  <div class="icon"><img src="https://img.icons8.com/fluent/48/000000/laptop-settings.png"/></div> 
+                  <h2>Web Design</h2>
+                  <p>Web design encompasses many different skills and disciplines in the production and maintenance of websites. Web design partially overlaps web engineering in the broader scope of web development.</p>
+              </div>
+              <div class="service-item">
+                  <div class="icon"><img src="https://img.icons8.com/fluent/48/000000/laptop-settings.png"/></div> 
+                  <h2>Web Design</h2>
+                  <p>Web design encompasses many different skills and disciplines in the production and maintenance of websites. Web design partially overlaps web engineering in the broader scope of web development.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- Services Section End -->
+
+  <!-- Project Section Start -->
+    <section id="project">
+      <div class="project container">
+        <div>
+          <h1 class="section-title">Recent<span> Projects</span></h1>
+        </div>
+        <div class="all-projects">
+          <div class="project-item">
+            <div class="project-info">
+              <h1>Project 1</h1>
+              <h2>Online Voting System</h2>
+              <p>This is my first project as a computer engineer. In this project I use PHP and MySQl languages. <pre>
+                <button style="padding:3px 20px; margin: 20px 100px 0 0;"><a href="Online_Voting_System/index.html" style="color: black; font-size: 22px; display: flex; align-items: center; justify-content: center;">Click Here</a></button></pre></p>
+            </div>
+            <div class="project-img">
+              <img src="img/p1.PNG" alt="img">
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-img">
+              <img src="img/p2.PNG" alt="img">
+            </div>
+            <div class="project-info">
+              <h1>Project 2</h1>
+              <h2>Online Stock Management</h2>
+              <p  style="margin-bottom: -20px;">As a computer engineer this is my first project. In this project we use HTML and Bootstrap for good looking of our website and also use PHP an MYSOL. <pre>
+                <button style="padding:3px 20px; margin: 20px 100px 0 0;"><a href="Online_Stock_Management.html" style="color: black; font-size: 22px; display: flex; align-items: center; justify-content: center;">Loading...</a></button></pre></p>
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-info">
+              <h1>Project 3</h1>
+              <h2>Geolocation</h2>
+              <p>In Geolocation you can show the our current position.This is made by Geolocation API. <pre>
+                <button style="padding:3px 20px; margin: 20px 100px 0 0;"><a href="Gological API.html" style="color: black; font-size: 22px; display: flex; align-items: center; justify-content: center;">Get Geolocation</a></button></pre></p>
+            </div>
+            <div class="project-img">
+              <img src="img/p3.jpeg" alt="img">
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-img">
+              <img src="img/p4.jpeg" alt="img">
+            </div>
+            <div class="project-info">
+              <h1>Project 4</h1>
+              <h2>Drag & Drop Puzzle</h2>
+              <p>In this you can see drag and drop puzzle. This is made by Drag & Drop API.<pre>
+                <button style="padding:3px 20px; margin: 20px 100px 0 0;"><a href="Drag & Drop API.html" style="color: black; font-size: 22px; display: flex; align-items: center; justify-content: center;">Solve Puzzle</a></button></pre></p>
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-info">
+              <h1>Project 5</h1>
+              <h2>Coding is Love</h2>
+              <p>This project coming soon. I hope this project also useful for you.<pre>
+<img style="margin-bottom: -20px;" src="https://img.icons8.com/plasticine/100/000000/new-year-calendar.png"/> 
+              <button style="padding:3px 20px; margin: 20px 100px 0 0;"><a href="#project" style="color: black; font-size: 22px; display: flex; align-items: center; justify-content: center;">Loading...</a></button></pre></p>
+            </div>
+            <div class="project-img">
+              <img src="img/p5.jpeg" alt="img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Project Section End -->
+
+
+    <!-- New Idea Section Start -->
+    <section id="newidea">
+      <div class="newidea container">
+              <h1 class="section-title">Start <span>Up</span></h1>
+          <div class="newidea-top">
+              <p>For start up I made below to apllications fully based on HTML and CSS.</p>
+          </div>
+          <div class="newidea-bottom">
+              <div class="newidea-item">
+                  <h2>Calander</h2>
+                  <p><img src="img/n1.jpeg" alt="" style="height: 300px; width: 400px;">
+                  <button><a href="Calander.html">Click Here</a></button></p>
+              </div>
+              <div class="newidea-item">
+                <h2>Calculator</h2>
+                <p><img src="img/n3.jpeg" alt="" style="height: 300px; width: 400px;">
+                <button><a href="Calculator.html">Click Here</a></button></p>
+            </div>
+          </div>
+      </div>
+  </section>
+    <!-- New Idea Section End -->
+
+
+    <!-- Contact_info Section Strat -->
+    <section id="contact">
+        <div class="contact container">
+            <h1 class="section-title">Contact <span>info</span></h1>
+          <div class="contact-items"> 
+            <div class="contact-item">
+              <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+              <div class="contact-info">
+                <h1 class="head"><span>P</span>hone</h1>
+                <h2><pre>   +91 81415 74539   
+                </pre></h2>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+              <div class="contact-info">
+                <h1 class="head"><span>E</span>mail</h1>
+                <h2><a href="mailto:20ceuos071@ddu.ac.in" target="_blank">20ceuos071@ddu.ac.in</a></h2>
+                <h2><a href="mailto:pkrupali018@gmail.com" target="_blank">pkrupali018@gmail.com</a></h2>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+              <div class="contact-info">
+                <h1 class="head"><span>A</span>ddress</h1>
+                <h2><pre> Rajkot, Gujarat, India 
+                </pre></h2>
+              </div>
+            </div>
+          </div>
+      </section>
+    <!-- Contact_info Section End -->
+
+    <!-- Footer Section Start -->
+    <section id="footer">
+      <div class="footer container">
+        <div class="footer-top">
+          <h1>Pipaliya <span> Krupali</span></h1>
+          <h2>Your Complete Web Solution</h2>
+        </div>
+        <div class="social-icons">
+          <div class="social-item">
+            <a href="https://www.facebook.com/profile.php?id=100048435736781" target="_blank"><img src="https://img.icons8.com/bubbles/50/000000/facebook-new.png"/></a>
+          </div>
+          <div class="social-item">
+            <a href="https://www.instagram.com/invites/contact/?i=rwgvoxq98nvn&utm_content=3lql6er"  target="_blank"><img src="https://img.icons8.com/bubbles/50/000000/instagram-new.png"/></a>
+          </div>
+          <div class="social-item">
+            <a href="https://www.linkedin.com/in/krupali-patel-7a1304205"  target="_blank"><img src="https://img.icons8.com/bubbles/50/000000/linkedin.png"/></a>
+          </div>
+          <div class="social-item">
+            <a href="https://twitter.com/Krupali_patel_?s=09"  target="_blank"><img src="https://img.icons8.com/bubbles/50/000000/twitter.png"/></a>
+          </div>
+        </div>
+        <p>Copyright © 2021 Krupali. All rights reserved</p>
+      </div>
+    </section>
+    <!-- Footer Section End -->
+
+</body>
+</html>

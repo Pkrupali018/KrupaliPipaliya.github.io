@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Voting System</title>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<style>
+		 button{
+            padding: 5px 10px;
+            background-color: rgb(0, 128, 49);
+        }
+        button:hover{
+            background-color: rgb(236, 233, 233);
+            padding: 7px 15px;
+        }
+        a{
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+        }
+        a:hover{
+            color: black;
+        }
+	</style>
+</head>
+<body>
+	<center>
+	<div id="headersection">
+		<button><a href="../index.html#project">Back</a></button>
+		<h1>Online Voting System</h1>
+		<button><a href="../Online_Stock_Management.html">Next</a></button>
+	</div>
+
+	<hr>
+
+	<div id="bodysection">
+		<form action="api/login.php" method="POST">
+			<h2>Login</h2>
+			<input type="text" name="mnum" placeholder="Enter Mobile No."><br><br>
+			<input type="password" name="pword" placeholder="Enter Password"><br><br>
+			<select name="role" id="dropbox">
+				<option value="" disabled selected>Select your role</option>
+				<option value="1">Voter</option>
+				<option value="2">Group</option>
+			</select><br><br>
+			<button type="submit" id="login">Login</button><br><br>
+			New User? <a href="routes/registration.html">Register Here</a>
+		</form>
+	</div>
+	</center>
+</body>
+</html>

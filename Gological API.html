@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geolocation</title>
+</head>
+<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script>
+function showmyPosition() {
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showMap, showError);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+ 
+// Define callback function for successful attempt
+function showMap(position) {
+    // Get location data
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
+    var latlong = new google.maps.LatLng(lat, long);
+    
+    var myOptions = {
+        center: latlong,
+        zoom: 16,
+        mapTypeControl: true,
+        navigationControlOptions: {
+            style:google.maps.NavigationControlStyle.SMALL
+        }
+    }
+    
+    var map = new google.maps.Map(document.getElementById("demo1"), myOptions);
+    var marker = new google.maps.Marker({ position:latlong, map:map, title:"You are here!" });
+}
+ 
+// Define callback function for failed attempt
+function showError(error) {
+    if(error.code == 1) {
+        result.innerHTML = "You've decided not to share your position, but it's OK. We won't ask you again.";
+    } else if(error.code == 2) {
+        result.innerHTML = "The network is down or the positioning service can't be reached.";
+    } else if(error.code == 3) {
+        result.innerHTML = "The attempt timed out before it could get the location data.";
+    } else {
+        result.innerHTML = "Geolocation failed due to unknown error.";
+    }
+}
+</script>
+<style>
+    button{
+        padding: 5px 10px;
+        background-color: rgb(0, 128, 49);
+    }
+    button:hover{
+        background-color: rgb(236, 233, 233);
+        padding: 7px 15px;
+    }
+    a, .button{
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+    }
+    a:hover, .button:hover{
+        color: black;
+    } 
+</style>
+
+<body>
+    <button style="float: left;"><a href="Online_Stock_Management.html">Back</a></button>
+    <center><button><a href="index.html#project">Leave</a></button></center>
+    <button style="float: right;"><a href="Drag & Drop API.html">Next</a></button>
+<h2>Click the below button to get your current coordinates.</h2>
+<button class="button" onclick="getLocation()">Try This</button>
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+
+<br><br>
+<h2>Click the below button to get your current location in map.</h2>
+<button class="button" type="button" onclick="showmyPosition();"><span>Show My Position on Google Map</span></button>
+    <div id="demo1" style="width: 400px; height: 300px;"></div>
+
+</body>
+</html>

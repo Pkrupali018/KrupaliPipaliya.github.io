@@ -1,0 +1,1179 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Kalam&family=Lobster+Two&family=Patrick+Hand&display=swap');
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: Kalam;
+	font-weight: normal;
+}
+.max-width{
+	max-width: 1300px;
+	padding: 5px 30px;
+	margin: auto;
+}
+.container{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Logo Styling Start */
+.brand h1 {
+	color: white;
+	font-size: 40px;
+	font-weight: 500px;
+}
+.brand h1 span {
+	color: black;
+	font-size: 22px;
+}
+/* Logo Styling End */
+
+/* Navbar Styling Start */
+#header {
+	position: fixed;
+	background-color: crimson;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+	padding: 0 30px;
+}
+#header .header {
+	min-height: 8vh;
+	background-color: rgba(31, 30, 30, 0.24);
+	transition: 0.3s ease background-color;
+}
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+#header .nav-list ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(31, 30, 30, 0.97);
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: 0.5s ease left;
+}
+#header .nav-list ul.active {
+	left: 0%;
+}
+#header .nav-list ul a {
+	font-size: 40px;
+	letter-spacing: 2px;
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	display: block;
+}
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgb(209, 66, 95, 0.15);
+	font-size: 8rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: 0.3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+#header .nav-list ul li:hover a {
+	color: crimson;
+}
+.dropdown button{
+	display: none;
+}
+#header .hamburger {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid white;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(0.8);
+	margin-right: 20px;
+}
+#header .hamburger:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: hamburger_puls 1s ease infinite;
+}
+#header .hamburger .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: white;
+	transition: 0.3s ease;
+	transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+	top: 8px;
+}
+#header .hamburger .bar::before {
+	bottom: 8px;
+}
+#header .hamburger.active .bar::before {
+	bottom: 0;
+}
+#header .hamburger.active .bar::after {
+	top: 0;
+}
+/* Navbar Styling End */
+
+
+/* Home Styling Start */
+.home{
+	background: url(img/b1.jpeg) center;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	color: white;
+	min-height: 700px;
+	padding-top: 200px;
+	margin-bottom: 100px;
+	/* z-index: 1; */
+}
+.home .max-width{
+	margin: auto 0 auto 30px;
+}
+.home .home-con .text1{
+	font-size: 30px;
+}
+.home .home-con .text2{
+	font-size: 60px;
+	margin-left: -10px;
+}
+.home .home-con .text3{
+	font-size: 50px;
+	margin: -5px 0 0 -10px;
+}
+.home .home-con .text3 span{
+	color: crimson;
+}
+.home .home-con .btn{
+	padding: 10px 50px;
+	margin: 20px 0 0 0;
+	color: #fff;
+	font-size: 27px;
+	text-transform: capitalize;
+}
+.home .home-con button{
+	background-color: transparent;
+	border-color: crimson;
+	border-width: 3px;
+	/* transition: 0.3s ease background-color; */
+}
+.home .home-con button:hover{
+	padding: 5px 5px;
+	/* margin: 20px 0 0 0; */
+	background: crimson;
+	border-color: #fff;
+}
+/* Home Styling End */
+
+
+/* About Styling Start */
+#about .about {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 100px 0;
+	max-width: 1200px;
+	margin: 0 auto;
+	align-items: center;
+	width: 100%;
+}
+#about .col-left {
+	width: 300px;
+	height:400px;
+	margin-left: 75px;
+}
+#about .col-left img{
+	width: 100%;
+	height: 100%;
+}
+#about .col-left .about-img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	border: 10px solid white;
+	z-index: -1;
+}
+#about .col-left .about-img::after {
+	content: '';
+	position: absolute;
+	left: -33px;
+	top: 19px;
+	height: 98%;
+	width: 98%;
+	border: 7px solid crimson;
+	z-index: -1;
+}
+#about .about .section-title{
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: capitalize;
+	margin-bottom: 10px;
+	position: relative;
+	z-index: -1;
+}
+#about .about .section-title span{
+	color: crimson;
+}
+#about .about .section-title::before{
+	content: '';
+	position: absolute;
+	background-color: black;
+	bottom: 5px;
+	width: 210px;
+	height: 3px;
+}
+#about .about .section-title::after{
+	content: 'who i am';
+	position: absolute;
+	font-size: 18px;
+	display: flex;
+	color: crimson;
+	background-color: white;
+	bottom: -10px;
+	left: 45px;
+	padding: 0 10px;
+}
+#about .col-right h2 {
+	font-size: 35px;
+	font-weight: bold;
+	margin: 25px 0px 15px;
+}
+#about .col-right p {
+	margin-bottom: 20px;
+	font-size: 22px;
+	margin: 0 10px;
+}
+#about .about .btn{
+	padding: 10px 50px;
+	margin: 20px 0 0 0;
+	color: #000;
+	font-size: 27px;
+}
+#about .about button{
+	background-color: transparent;
+	border-color: crimson;
+	border-width: 3px;
+    padding: 5px;
+    margin: 50px 0px;
+}
+#about .about button:hover{
+	background: crimson;
+	border-color: #000;
+    padding: 10px;
+}
+#about .about button a:hover{
+	color: #fff;
+}
+/* About Styling End */
+
+
+/* Certification Stylind Start */
+#certification {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#certification .section-title{
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: capitalize;
+	margin-bottom: 50px;
+	position: relative;
+	z-index: -1;
+}
+#certification .section-title span{
+	color: crimson;
+}
+#certification .section-title::before{
+	content: '';
+	position: absolute;
+	background-color: black;
+	bottom: 5px;
+	width: 270px;
+	height: 3px;
+}
+#certification .section-title::after{
+	display: block;
+	content: 'What i get';
+	position: absolute;
+	font-size: 18px;
+	display: flex;
+	color: crimson;
+	background-color: white;
+	bottom: -10px;
+	left: 60px;
+	padding: 0 10px;
+}
+#certification  p {
+	margin-bottom: 20px;
+	font-size: 22px;
+	text-align: center;
+	padding-bottom: 50px;
+	margin: 0 10px;
+}
+.row > .column {
+	padding: 0 8px;
+  }
+
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  .column {
+	float: left;
+	width: 25%;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: black;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	width: 60%;
+	max-width: 1200px;
+  }
+  
+  /* The Close Button */
+  .close {
+	color: white;
+	position: absolute;
+	top: 60px;
+	left: 30px;
+	font-size: 35px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #999;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  .mySlides {
+	display: none;
+  }
+  
+  .cursor {
+	cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+  }
+  
+  img {
+	margin-bottom: -4px;
+  }
+  
+  .caption-container {
+	text-align: center;
+	background-color: black;
+	padding: 2px 16px;
+	color: white;
+  }
+  
+  .demo {
+	opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+	opacity: 1;
+  }
+  
+  img.hover-shadow {
+	transition: 0.3s;
+  }
+  
+  .hover-shadow:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+/* Certification Stylind End*/
+
+
+/* Services Styling Start */
+#service .service{
+	flex-direction: column;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 200px 0;
+}
+#service .service .section-title{
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: capitalize;
+	margin-bottom: 10px;
+	position: relative;
+	z-index: -1;
+}
+#service .service .section-title span{
+	color: crimson;
+}
+#service .service .section-title::before{
+	content: '';
+	position: absolute;
+	background-color: black;
+	bottom: 5px;
+	width: 270px;
+	height: 3px;
+}
+#service .service .section-title::after{
+	display: block;
+	content: 'What i provide';
+	position: absolute;
+	font-size: 18px;
+	display: flex;
+	color: crimson;
+	background-color: white;
+	bottom: -10px;
+	left: 60px;
+	padding: 0 10px;
+}
+#service .service-top p{
+	font-size: 22px;
+	/* margin: 0 400px; */
+	padding: 30px 0;
+}
+#service h2{
+	font-size: 40px;
+	color: white;
+}
+#service .service-bottom{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 20px;
+	flex-wrap: wrap;
+}
+#service .service-item{
+	flex-basis: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	border-radius: 10px;
+	background-image: linear-gradient(60deg, #2c333b 0%, #616f7c 100%);
+	margin: 10px;
+	color: white;
+}
+#service .service-item:hover{
+	background-image: linear-gradient(60deg, #c22f4c 0%, #fc8fa5 100%);
+}
+/* Services Styling End */
+
+
+
+
+#newidea .newidea{
+	flex-direction: column;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#newidea .newidea .section-title{
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: capitalize;
+	margin-bottom: 10px;
+	position: relative;
+	z-index: -1;
+}
+#newidea .newidea .section-title span{
+	color: crimson;
+}
+#newidea .newidea .section-title::before{
+	content: '';
+	position: absolute;
+	background-color: black;
+	bottom: 5px;
+	width: 220px;
+	height: 3px;
+}
+#newidea .newidea .section-title::after{
+	display: block;
+	content: 'What i try';
+	position: absolute;
+	font-size: 18px;
+	display: flex;
+	color: crimson;
+	background-color: white;
+	bottom: -10px;
+	left: 60px;
+	padding: 0 10px;
+}
+#newidea .newidea-top p{
+	font-size: 22px;
+	/* margin: 0 400px; */
+	padding: 30px 0;
+}
+#newidea h2{
+	font-size: 40px;
+	color: black;
+	padding-top: -;
+}
+#newidea .newidea-bottom{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 20px;
+	flex-wrap: wrap;
+}
+#newidea .newidea-item{
+	flex-basis: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	border-radius: 10px;
+	margin: 10px;
+	color: white;
+}
+#newidea .newidea-bottom button{
+	background-color: rgb(6, 167, 6);
+	padding: 10px 20px;
+}
+#newidea .newidea-bottom button:hover{
+	background-color: rgb(202, 193, 193);
+	padding: 11px 25px;
+}
+#newidea .newidea-bottom a{
+	color: white;
+	font-size: 18px;
+}
+#newidea .newidea-bottom a:hover{
+	color: black;
+}
+
+
+
+/* Project Styling Start */
+#project .project{
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#project .project .section-title{
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: capitalize;
+	position: relative;
+	z-index: -1;
+}
+#project .project .section-title span{
+	color: #dc143c;
+}
+#project .project .section-title::before{
+	content: '';
+	position: absolute;
+	background-color: black;
+	width: 330px;
+	bottom: 0px;
+	height: 3px;
+}
+#project .project .section-title::after{
+	content: 'What i work';
+	position: absolute;
+	color: crimson;
+	font-size: 18px;
+	bottom: -15px;
+	left: 20px;
+	display: flex;
+	background-color: white;
+	padding: 0 20px;
+	transform: translateX(50%);
+}
+#project .all-projects{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 20px;
+	flex-wrap: wrap;
+    margin-top:40px;
+}
+#project .project-item{
+	flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px;
+	border-radius: 10px;
+}
+#project .project-info{
+	flex-basis: 70%;
+    text-align: center;
+	background-image: linear-gradient(60deg, #2c333b 0%, #858e97 100%);
+	width: 400px;
+	height: 300px;
+	color: white;
+	padding: 20px 40px;
+    border-radius: 10px;
+}
+#project .project-img{
+	flex-basis: 70%;
+	width: 400px;
+	height: 300px;
+}
+#project .project-img img{
+	width: 100%;
+	height: 100%;
+    border-radius: 10px;
+}
+#project .project-info h1{
+	font-size: 40px;
+}
+#project .project-info h2{
+	font-size: 27px;
+}
+#project .project-info p{
+	font-size: 18px;
+}
+#project .project-info a:hover{
+	color: crimson;
+	text-decoration: underline;
+}
+#project .project-img img {
+	transition: 0.3s ease transform;
+}
+#project .project-item:hover .project-img img {
+	transform: scale(0.95);
+}
+/* Project Styling End */
+
+
+/* Contact Styling Start */
+ #contact .contact{
+	flex-direction: column;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 200px 0;
+}
+#contact .contact .section-title{
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: capitalize;
+	margin-bottom: 10px;
+	position: relative;
+	z-index: -1;
+}
+#contact .contact .section-title span{
+	color: crimson;
+}
+#contact .contact .section-title::before{
+	content: '';
+	position: absolute;
+	background-color: black;
+	bottom: 5px;
+	width: 270px;
+	height: 3px;
+}
+#contact .contact .section-title::after{
+	content: 'Touch with me';
+	position: absolute;
+	font-size: 18px;
+	display: flex;
+	color: crimson;
+	background-color: white;
+	bottom: -10px;
+	left: 60px;
+	padding: 0 10px;
+}
+#contact .contact-items{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    flex-direction: column;
+    margin: 30px;
+}
+#contact .contact-item{
+    width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    flex-direction: column;
+	padding: 30px;
+	border-radius: 10px;
+	margin: 20px 0px;
+	box-shadow:0px 0px 20px 0px black;
+	transition: 0.2s ease box-shadow;
+	text-align: center;
+}
+#contact .contact-item:hover{
+	box-shadow: 0px 0px 5px 0px black;
+}
+#contact h2 a{
+	color: black;
+}
+#contact .head{
+	font-size: 40px;
+	font-weight: bold;
+}
+#contact h1 span{
+	color: crimson;
+}
+/* Contact Styling End */
+
+
+/* Footer Styling Start */
+#footer {
+	background-color: black;
+} 
+#footer h1{
+	font-size: 30px;
+	color: white;
+	padding-top: 50px;
+}
+#footer h1 span{
+	color: crimson;
+}
+#footer h2{
+	font-size: 22px;
+	color: white;
+}
+#footer p{
+	font-size: 18px;
+	color: white;
+	padding-bottom: 10px;
+}
+#footer .footer{
+	min-height: 100px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+#footer .social-icons{
+	display: flex;
+	padding: 5px 0 20px 20px;
+}
+#footer .social-item img {
+	/* filter: grayscale(0); */
+	transition: 0.3s ease filter;
+	filter: grayscale(0);
+	margin-left: 10px;
+}
+#footer .social-item img:hover {
+	/* filter: grayscale(1); */
+	filter: grayscale(1);
+}
+/* Footer Styling End */
+
+
+
+/* Key frame for hamburger */
+@keyframes hamburger_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+}
+
+
+
+/* For Desktop */
+@media only screen and (min-width:900px) {
+
+	/* Navbar Styling Start */
+	.dropdown button{
+		display: block;
+		letter-spacing: 2px;
+		margin: 0 5px;
+	}
+	.dp{
+		bottom: 10%;
+		background-color: crimson;
+		border: none;
+		color: white;
+		font-size: 22px;
+	}
+	.dp:hover{
+		color: black;
+	}
+	.dropdown {
+		float: left;
+		overflow: hidden;
+		margin-bottom: -10px;
+	  }
+	  
+	  .dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	  }
+	  
+	  .dropdown-content a {
+		float: none;
+		color: crimson;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		text-align: left;
+	  }
+	  .dropdown-content a:hover {
+		background-color: rgb(197, 189, 189);
+	  }
+	  
+	  .dropdown:hover .dropdown-content {
+		display: block;
+	  }
+	.navbar{
+		display: none;
+	}
+	#header .hamburger {
+		display: none;
+	}
+	#header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+	#header .nav-list ul li a {
+		font-size: 22px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+	#header .nav-list ul li:hover a {
+		color: black;
+	}
+	#header .nav-list ul a:after {
+		display: none;
+	}
+	/* Navbar Styling End */
+
+
+	/* Home Styling Start */
+	.home .max-width{
+		margin: auto 0 auto 120px;
+	}.home .home-con .text2{
+		font-size: 70px;
+	}
+	/* Home Styling End */
+
+
+	/* About Styling Start */
+	#about .about {
+		display: block;
+		text-align: unset;
+		justify-content: unset;
+		flex-direction: column;
+		padding: 100px 0;
+		max-width: 1200px;
+		margin: 0 auto;
+		align-items: center;
+		width: 100%;
+	}
+	#about .col-left {
+		width: 300px;
+		height:400px;
+		margin-left: 75px;
+	}
+	#about .col-left img{
+		width: 100%;
+		height: 100%;
+	}
+	#about .col-left .about-img {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		border: 10px solid white;
+		z-index: -1;
+	}
+	#about .col-left .about-img::after {
+		content: '';
+		position: absolute;
+		left: -33px;
+		top: 19px;
+		height: 98%;
+		width: 98%;
+		border: 7px solid crimson;
+		z-index: -1;
+	}
+	#about .about .section-title{
+		text-align: center;
+		justify-content: center;
+		font-size: 50px;
+		font-weight: bold;
+		text-transform: capitalize;
+		margin-bottom: 10px;
+		position: relative;
+		z-index: -1;
+	}
+	#about .about .section-title span{
+		color: crimson;
+	}
+	#about .about .section-title::before{
+		content: '';
+		position: absolute;
+		background-color: black;
+		bottom: 5px;
+		width: 210px;
+		height: 3px;
+	}
+	#about .about .section-title::after{
+		content: 'who i am';
+		position: absolute;
+		font-size: 18px;
+		display: flex;
+		color: crimson;
+		background-color: white;
+		bottom: -10px;
+		left: 550px;
+		padding: 0 10px;
+	}
+	#about .col-right {
+		margin-left: 50px;
+		float: right;
+		width: 60%;
+		border: 1px;
+		padding-top: -200px;
+	}
+	#about .col-right h2 {
+		margin: 25px 0px 15px; 
+		font-size: 30px;
+		font-weight: 500;
+		letter-spacing: 5px;
+		margin-bottom: 10px;
+	}
+	#about .col-right p {
+		margin-bottom: 20px;
+		font-size: 22px;
+	}
+	#about .about .btn{
+		padding: 10px 50px;
+		margin: 20px 0 0 0;
+		color: #000;
+		font-size: 27px;
+	}
+	#about .about button{
+		background-color: transparent;
+		border-color: crimson;
+		border-width: 3px;
+		padding: 5px;
+		margin: 50px 0px;
+	}
+	#about .about button:hover{
+		background: crimson;
+		border-color: #000;
+		padding: 10px;
+	}
+	#about .about button a:hover{
+		color: #fff;
+	}
+	/* About Styling End */
+
+
+	/* Certification Styling Start */
+	#certification  p {
+		margin: 0 150px;
+	}
+	.modal-content{
+		width: 30%;
+	}
+	.close {
+		color: white;
+		position: absolute;
+		top: 80px;
+		left: unset;
+		right: 50px;
+		font-size: 35px;
+		font-weight: bold;
+	  }
+	/* Certification Styling End */
+
+
+	/* Services Styling Start */
+	#service .service{
+		text-align: center;
+		padding: 100px 0;
+	}
+	#service .service-top p{
+		margin: 0 400px 10px;
+	}
+	#service .service-item{
+		flex-basis: 23%;
+	}
+	/* Services Styling End */
+
+	#newidea .newidea{
+		text-align: center;
+		padding: 100px 0;
+	}
+	#newidea .newidea .section-title{
+		letter-spacing: 1px;
+	}
+	#newidea .newidea .section-title::before{
+		width: 200px;
+	}
+	#newidea .newidea .section-title::after{
+		left: 45px;
+	}
+	#newidea .newidea-top p{
+		margin: 0 400px -60px;
+	}
+	#newidea .newidea-item{
+		flex-basis: 23%;
+	}
+	/* Project Styling Start */
+	#project .all-projects{
+		padding-top: 20px;
+	}
+	#project .project-item{
+		flex-wrap: nowrap;
+		margin: -20px;
+		padding: 20px;
+	}
+	#project .project-info{
+		width: 600px;
+		height: 400px;
+		padding: 100px 40px;
+		border-radius: 0%;
+	}
+	#project .project-img {
+		width: 600px;
+		height: 400px;
+		border-radius: 0%;
+	}
+	#project .project-img img{
+		border-radius: 0%;
+		width: 100%;
+		height: 100%;
+	}
+	/* Project Styling End */
+
+
+	/* Contact Styling Start */
+	#contact .contact-items{
+		flex-direction: row;
+	}
+	#contact .contact-item{
+		margin: 20px 5%;
+	}
+	#contact h2 a{
+		color: black;
+	}
+	/* Contact Styling End */
+
+	
+}
